@@ -33,6 +33,7 @@ namespace presentacion
             {
                 articulos = negocio.listar();
                 dtgvArticulos.DataSource = articulos;
+                ocultarColumnas();
                 cargarImagen(articulos[0].ImagenUrl);
             }catch(Exception ex)
             {
@@ -50,6 +51,28 @@ namespace presentacion
             {
                 pbArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
+        }
+
+        private void dtgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dtgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dtgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }
+        }
+
+        private void ocultarColumnas()
+        {
+            dtgvArticulos.Columns["ImagenUrl"].Visible = false;
+            dtgvArticulos.Columns["Id"].Visible = false;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarArticulo alta = new frmAgregarArticulo();
+            alta.ShowDialog();
+            cargar();
         }
     }
 }

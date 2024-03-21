@@ -30,6 +30,7 @@
         {
             this.dtgvArticulos = new System.Windows.Forms.DataGridView();
             this.pbArticulo = new System.Windows.Forms.PictureBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
@@ -37,26 +38,39 @@
             // dtgvArticulos
             // 
             this.dtgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvArticulos.Location = new System.Drawing.Point(69, 95);
+            this.dtgvArticulos.Location = new System.Drawing.Point(39, 95);
             this.dtgvArticulos.Name = "dtgvArticulos";
-            this.dtgvArticulos.Size = new System.Drawing.Size(653, 331);
+            this.dtgvArticulos.Size = new System.Drawing.Size(542, 269);
             this.dtgvArticulos.TabIndex = 0;
+            this.dtgvArticulos.SelectionChanged += new System.EventHandler(this.dtgvArticulos_SelectionChanged);
             // 
             // pbArticulo
             // 
-            this.pbArticulo.Location = new System.Drawing.Point(837, 95);
+            this.pbArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbArticulo.Location = new System.Drawing.Point(643, 95);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(322, 331);
-            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 1;
             this.pbArticulo.TabStop = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(503, 387);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(77, 29);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1240, 566);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1018, 461);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.dtgvArticulos);
             this.Name = "frmArticulos";
@@ -66,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -74,6 +87,7 @@
 
         private System.Windows.Forms.DataGridView dtgvArticulos;
         private System.Windows.Forms.PictureBox pbArticulo;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 
