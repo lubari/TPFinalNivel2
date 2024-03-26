@@ -16,6 +16,13 @@ namespace presentacion
             InitializeComponent();
         }
 
+        public frmAgregarArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificar Articulo";
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
@@ -24,12 +31,14 @@ namespace presentacion
                 if (articulo == null)
                     articulo = new Articulo();
 
-                articulo.Precio = int.Parse(txtPrecio.Text);
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.ImagenUrl = txtImagenUrl.Text;
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                
 
                 if (articulo.Id != 0)
                 {
@@ -65,7 +74,7 @@ namespace presentacion
             }
             catch (Exception ex)
             {
-                pboxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                pboxArticulo.Load("https://i0.wp.com/casagres.com.ar/wp-content/uploads/2022/09/placeholder.png?ssl=1");
             }
         }
 
@@ -95,7 +104,14 @@ namespace presentacion
 
                 if (articulo != null)
                 {
-
+                    txtCodigo.Text = articulo.Codigo;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtImagenUrl.Text = articulo.ImagenUrl;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    cboCategoria.SelectedValue = articulo.Categoria.Id;
+                    cboMarca.SelectedValue = articulo.Marca.Id;
+                    txtNombre.Text = articulo.Nombre;
+                    Helper.cargarImagen(articulo.ImagenUrl, pboxArticulo);
                 }
             }
             catch (Exception ex)
