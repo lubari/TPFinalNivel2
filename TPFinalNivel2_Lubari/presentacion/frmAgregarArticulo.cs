@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using negocio;
 using System.Configuration;
 using System.Xml.Linq;
+using System.IO;
 
 namespace presentacion
 {
@@ -58,8 +59,8 @@ namespace presentacion
                 }
 
                 //Guardo imagen si la levantó localmente:
-                //if (archivo != null && !(txtImagenUrl.Text.ToUpper().Contains("HTTP")))
-                  //  File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+                if (archivo != null && !(txtImagenUrl.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
 
                 Close();
 
@@ -130,6 +131,17 @@ namespace presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtImagenUrl.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
             }
         }
     }

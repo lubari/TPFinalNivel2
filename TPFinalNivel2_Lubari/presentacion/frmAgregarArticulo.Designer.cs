@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,7 +210,7 @@
             this.lblAsterisco.ForeColor = System.Drawing.Color.Red;
             this.lblAsterisco.Location = new System.Drawing.Point(256, 50);
             this.lblAsterisco.Name = "lblAsterisco";
-            this.lblAsterisco.Size = new System.Drawing.Size(9, 10);
+            this.lblAsterisco.Size = new System.Drawing.Size(11, 13);
             this.lblAsterisco.TabIndex = 16;
             this.lblAsterisco.Text = "*";
             // 
@@ -249,12 +250,23 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "*";
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(265, 230);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(16, 19);
+            this.btnAgregarImagen.TabIndex = 20;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(621, 377);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -311,5 +323,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
