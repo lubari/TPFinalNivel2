@@ -78,14 +78,14 @@
             this.dtgvArticulos.Name = "dtgvArticulos";
             this.dtgvArticulos.ReadOnly = true;
             this.dtgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvArticulos.Size = new System.Drawing.Size(542, 269);
-            this.dtgvArticulos.TabIndex = 0;
+            this.dtgvArticulos.Size = new System.Drawing.Size(640, 269);
+            this.dtgvArticulos.TabIndex = 2;
             this.dtgvArticulos.SelectionChanged += new System.EventHandler(this.dtgvArticulos_SelectionChanged);
             // 
             // pbArticulo
             // 
             this.pbArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbArticulo.Location = new System.Drawing.Point(643, 95);
+            this.pbArticulo.Location = new System.Drawing.Point(822, 95);
             this.pbArticulo.Name = "pbArticulo";
             this.pbArticulo.Size = new System.Drawing.Size(322, 331);
             this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,7 +97,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(292, 390);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(77, 23);
-            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -118,7 +118,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(115, 56);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(124, 20);
-            this.txtBuscar.TabIndex = 4;
+            this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnDetalles
@@ -126,7 +126,7 @@
             this.btnDetalles.Location = new System.Drawing.Point(124, 390);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(77, 23);
-            this.btnDetalles.TabIndex = 5;
+            this.btnDetalles.TabIndex = 4;
             this.btnDetalles.Text = "Detalles";
             this.btnDetalles.UseVisualStyleBackColor = true;
             this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
@@ -137,7 +137,7 @@
             this.lblBuscar.Location = new System.Drawing.Point(36, 60);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(43, 13);
-            this.lblBuscar.TabIndex = 6;
+            this.lblBuscar.TabIndex = 0;
             this.lblBuscar.Text = "Buscar:";
             // 
             // btnEliminar
@@ -145,7 +145,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(209, 390);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -156,7 +156,7 @@
             this.lblCampo.Location = new System.Drawing.Point(36, 460);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(43, 13);
-            this.lblCampo.TabIndex = 8;
+            this.lblCampo.TabIndex = 7;
             this.lblCampo.Text = "Campo:";
             // 
             // lblCriterio
@@ -174,7 +174,7 @@
             this.lblFiltro.Location = new System.Drawing.Point(443, 460);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(32, 13);
-            this.lblFiltro.TabIndex = 10;
+            this.lblFiltro.TabIndex = 11;
             this.lblFiltro.Text = "Filtro:";
             // 
             // cboxCampo
@@ -183,7 +183,7 @@
             this.cboxCampo.Location = new System.Drawing.Point(85, 456);
             this.cboxCampo.Name = "cboxCampo";
             this.cboxCampo.Size = new System.Drawing.Size(121, 21);
-            this.cboxCampo.TabIndex = 11;
+            this.cboxCampo.TabIndex = 8;
             this.cboxCampo.SelectedIndexChanged += new System.EventHandler(this.cboxCampo_SelectedIndexChanged);
             // 
             // cboxCriterio
@@ -192,21 +192,21 @@
             this.cboxCriterio.Location = new System.Drawing.Point(284, 456);
             this.cboxCriterio.Name = "cboxCriterio";
             this.cboxCriterio.Size = new System.Drawing.Size(121, 21);
-            this.cboxCriterio.TabIndex = 12;
+            this.cboxCriterio.TabIndex = 10;
             // 
             // txtboxFiltro
             // 
             this.txtboxFiltro.Location = new System.Drawing.Point(490, 456);
             this.txtboxFiltro.Name = "txtboxFiltro";
             this.txtboxFiltro.Size = new System.Drawing.Size(100, 20);
-            this.txtboxFiltro.TabIndex = 13;
+            this.txtboxFiltro.TabIndex = 12;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(627, 455);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -217,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(1018, 493);
+            this.ClientSize = new System.Drawing.Size(1197, 493);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtboxFiltro);
             this.Controls.Add(this.cboxCriterio);

@@ -21,6 +21,7 @@ namespace presentacion
             InitializeComponent();
             this.articulo = articulo;
             Text = "Modificar Articulo";
+            btnAgregar.Text = "Modificar";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -31,6 +32,12 @@ namespace presentacion
                 if (articulo == null)
                     articulo = new Articulo();
 
+                if (!validarDatos())
+                {
+                    MessageBox.Show("Faltan Datos!");
+                    return;
+                }
+
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Nombre = txtNombre.Text;
@@ -38,7 +45,6 @@ namespace presentacion
                 articulo.ImagenUrl = txtImagenUrl.Text;
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                
 
                 if (articulo.Id != 0)
                 {
@@ -64,7 +70,14 @@ namespace presentacion
             }
         }
 
-
+        private bool validarDatos()
+        {
+            if (txtCodigo.Text == "" || txtPrecio.Text == "" || txtNombre.Text == "" || !Helper.esDecimal(txtPrecio.Text))
+            {
+                return false;
+            }
+            return true;
+        }
 
         private void cargarImagen(string imagen)
         {

@@ -95,24 +95,30 @@ namespace presentacion
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-            if (!validarLista())
+            if (dtgvArticulos.CurrentRow != null)
             {
-                return;
+                Articulo seleccionado;
+                seleccionado = (Articulo)dtgvArticulos.CurrentRow.DataBoundItem;
+                frmArticuloDetalles detalles = new frmArticuloDetalles(seleccionado);
+                detalles.ShowDialog();
+                cargar();
             }
-            Articulo seleccionado;
-            seleccionado = (Articulo)dtgvArticulos.CurrentRow.DataBoundItem;
-            frmArticuloDetalles detalles = new frmArticuloDetalles(seleccionado);
-            detalles.ShowDialog();
-            cargar();
+            else
+            {
+                MessageBox.Show("Seleccione un artículo.");
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!validarLista())
+            if (dtgvArticulos.CurrentRow != null)
             {
-                return;
+                eliminar();
             }
-            eliminar();
+            else
+            {
+                MessageBox.Show("Seleccione un artículo.");
+            }
         }
 
         private void eliminar()
@@ -155,7 +161,7 @@ namespace presentacion
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
-        {
+        {   
             ArticulosNegocio negocio = new ArticulosNegocio();
 
             try
@@ -215,15 +221,18 @@ namespace presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (!validarLista())
+            if (dtgvArticulos.CurrentRow != null)
             {
-                return;
+                Articulo seleccionado;
+                seleccionado = (Articulo)dtgvArticulos.CurrentRow.DataBoundItem;
+                frmAgregarArticulo modificar = new frmAgregarArticulo(seleccionado);
+                modificar.ShowDialog();
+                cargar();
             }
-            Articulo seleccionado;
-            seleccionado = (Articulo)dtgvArticulos.CurrentRow.DataBoundItem;
-            frmAgregarArticulo modificar = new frmAgregarArticulo(seleccionado);
-            modificar.ShowDialog();
-            cargar();
+            else
+            {
+                MessageBox.Show("Seleccione un artículo.");
+            }
         }
 
         private bool validarLista()
